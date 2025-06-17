@@ -27,4 +27,14 @@ One great feature about Splunk is that you can create your own fields to organiz
 ![select_fields](https://github.com/bmach1062/Splunk-Home-Lab/blob/main/Splunk_Pictures/3.%20Select_Fields.png)
 
 4. **Field Validation**  
-That said, in this case, I selected multiple fields at once since it’s a controlled lab setting and I wanted to move quickly through the process. This approach works here because I know the log format is consistent and I’m only working with a small, predictable dataset.
+That said, in this case, I selected multiple fields at once since it’s a controlled lab setting and I wanted to move quickly through the process. This approach works here because I know the log format is consistent and I’m only working with a small, predictable dataset.  
+
+   After creating your fields, we need to make sure they are correctly matched across multiple log entries. Splunk automatically highlights the extracted values within the logs, allowing you to visually confirm that each field—like timestamp, src_ip, or dst_port—is being consistently and accurately identified. If you notice any mismatches, missing data, or incorrect highlights, it likely means the regex pattern needs adjustment. This validation step is important because it helps ensure your extractions are reliable before saving and applying them to your dataset.
+
+![validate](https://github.com/bmach1062/Splunk-Home-Lab/blob/main/Splunk_Pictures/4.%20Validate.png)
+
+5. **Search View and Field Visibility**  
+Once the fields have been validated and saved, you can now view them while querying in the Search tab. These newly created fields will appear under the “Interesting Fields” section on the left-hand sidebar. This makes it easier to interact with and filter your search results using the fields you extracted—such as src_ip, dst_port, or timestamp. Clicking on any of these field names lets you quickly see their values across your dataset, helping you analyze patterns, detect anomalies, and build meaningful dashboards or alerts using real data.
+![field_visibility](https://github.com/bmach1062/Splunk-Home-Lab/blob/main/Splunk_Pictures/copy%207.png)
+
+With this process, I was able to extract meaningful insights from unstructured DNS logs by creating and validating custom fields in Splunk. Field extraction is a powerful feature that makes log data much easier to work with, especially when building dashboards, running queries, or detecting anomalies. Even in a basic home lab setting, practicing these steps strengthens your ability to manage real-world data more effectively.
